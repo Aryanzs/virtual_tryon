@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Images</title>
+    <style>
+        /* Overall body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0077B6, #ffffff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Header styling */
+        h2 {
+            background: white; /* White background for the header */
+            opacity: 0.8; /* 50% transparency */
+            padding: 10px 20px; /* Padding around the text */
+            border-radius: 10px; /* Rounded corners for the background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            font-size: 28px; /* Increased font size */
+            font-weight: bold; /* Bold font */
+            color: #0077B6; /* Font color */
+            text-shadow: 0 0 5px #00B4DB, 0 0 10px #00B4DB; /* Glowing effect */
+            margin-bottom: 20px; /* Space between the header and the form */
+        }
+
+        /* Form styling */
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: auto; /* Adjusts width to fit content */
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Input and select styling */
+        label, input, select {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background: #0077B6;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #005f8d;
+        }
+
+        /* Fix for file input to prevent overflow */
+        .file-input-container {
+            position: relative;
+            width: 100%;
+        }
+
+        input[type="file"] {
+            width: calc(100% - 90px); /* Adjust width to prevent overflow */
+        }
+
+        .file-input-label {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 90px; /* Width of the "No file chosen" dialogue */
+            line-height: 2.5; /* Align text vertically */
+            text-align: center;
+            background: #f1f1f1;
+            border-left: 1px solid #ddd;
+            border-radius: 0 5px 5px 0; /* Rounded right corners */
+            overflow: hidden; /* Prevents overflow */
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload Model and Clothes Images</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="file-input-container">
+            <label for="model_image">Model Image:</label>
+            <input type="file" name="model_image" required>
+            <span class="file-input-label">No file chosen</span>
+        </div>
+        <div class="file-input-container">
+            <label for="clothes_image">Clothes Image:</label>
+            <input type="file" name="clothes_image" required>
+            <span class="file-input-label">No file chosen</span>
+        </div>
+        <label for="garment_type">Select Garment Type:</label>
+        <select name="garment_type" id="garment_type" required>
+            <option value="upper_body">Upper Body</option>
+            <option value="lower_body">Lower Body</option>
+        </select>
+        <input type="submit" value="Upload Images">
+    </form>
+</body>
+</html>

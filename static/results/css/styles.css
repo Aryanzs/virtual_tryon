@@ -33,6 +33,11 @@ body {
   font-style: normal;
 }
 
+.hero-btnn{
+  width:8rem;
+  margin-top: 8px;
+}
+
 a {
   text-decoration: none;
   color: var(--black);

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0077B6, #ffffff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            background: white;
+            opacity: 0.8;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 28px;
+            font-weight: bold;
+            color: #0077B6;
+            text-shadow: 0 0 5px #00B4DB, 0 0 10px #00B4DB;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 80%;
+            max-height: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Adjust the gap between anchor tags */
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            margin-bottom: 20px;
+        }
+
+        a {
+            background: #0077B6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background: #005f8d;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .link-container {
+                flex-direction: column;
+            }
+            a {
+                margin-bottom: 10px; /* Adds spacing between links on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Processed Image</h2>
+    <img src="data:image/png;base64,{{ img_data }}" alt="Processed Image">
+    <div class="link-container">
+        <a href="/upload">Upload Another</a>
+        <a href="/homw">Back To Shop</a>
+        <a href="/">Home Screen</a>
+    </div>
+</body>
+</html>
