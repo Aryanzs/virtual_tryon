@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Pacifico&display=swap');
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+outline: none;
+text-decoration: none;
+}
+:root{
+    --pink:#e79ea7;
+    --greem:#d7fecf;
+    --blue:#90c6b9;
+}
+
+
+html{
+    font-size:62.5%;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.video{
+    width:100% ;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: -100;
+    right:0;
+}
+.header{
+    width:100% ;
+    height:auto;
+    z-index: 1000000;
+    padding: 1rem;
+    background: black; 
+    color: bisque;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+}
+.header h2{
+   color: antiquewhite;
+   font-size: 3rem;
+}
+.header a{
+    color: antiquewhite;
+    font-size: 1.8rem;
+    padding-left: 4rem;
+    font-weight: lighter;
+}
+.logo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.maintext{
+    width: 95%;
+    height: 90vh;
+    background: transparent;
+    position: absolute;
+    top:8%;
+    margin: 1rem auto;
+  
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.leftside{
+    width:35%;
+    height:100%;
+    background: transparent;
+    font-family: "Pacifico", cursive;
+   
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color:white;
+    padding:1rem;
+}
+.first {
+    width:80%;
+    background-color: transparent;
+    color: white;
+    height: 30%;
+    font-size: 3rem;
+    padding :1rem;
+     text-align : center;
+
+
+    
+}
+.second {
+    width : 80%;
+    height: 10%;
+    background:white ;
+    color:black;
+    border-radius:2rem ;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    font-size: 1.1rem;
+    font-family: "Cormorant SC", serif;
+
+}
+.rightside{
+    width:65%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent
+
+}
+.rightside img {
+    width :110%;
+    height:110%
+    ;
+}
+
+button {
+    width : 60%;
+    height:4rem;
+    background: black;
+    color: var(--pink);
+    border: 2px solid white;
+    font-family: "Pacifico", cursive;
+    font-size: 2rem;
+    transition:1s;
+
+}
+button:hover {
+    word-spacing: 0.5rem;
+    font-size:2.2rem;
+    cursor:pointer;
+    padding-left: 1rem;
+
+}
+@media (min-aspect-ratio:16/9){
+    .video{
+        width:100% ;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    .video{
+        width:auto ;
+        height: 100%;
+    }
+}
